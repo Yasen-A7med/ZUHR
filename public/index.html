@@ -381,7 +381,7 @@ const TX={v:[['No alert yet. A short slouch is fine.','مفيش تنبيه لس�
 let tier=0;
 function mode(){let t;if(m==='v'){const v=+$('#sl').value;$('#sv').textContent=v;tier=v<30?0:v<120?1:2;t=TX.v[tier]}else{tier=0;t=TX[m]}$('#mt').textContent=ar?t[1]:t[0];$('#stg').className='stage '+(m==='v'?(tier?'v'+tier:''):m)}
 $('#sl').oninput=mode;
-$('#j').onchange=()=>{$('#jw').style.display=$('#j').value==='Other'?'block':'none'};
+$('#j').onchange=()=>{const o=$('#j').value==='Other';$('#jw').style.display=o?'block':'none';if(o)$('#jo').focus();else{$('#jo').value='';if(errK==='job')showErr('')}};
 $$('#tabs button').forEach(b=>b.onclick=()=>{$$('#tabs button').forEach(k=>k.classList.remove('a'));b.classList.add('a');m=b.dataset.m;$('#vp').style.display=m==='v'?'block':'none';mode()});
 const th=$$('#th img'),dev=$('#dev');dev.src=th[0].src;
 for(let i=0;i<22;i++){const s=document.createElement('span');s.className='p';s.style.left=(5+Math.random()*90)+'%';s.style.animationDelay=(Math.random()*3)+'s';s.style.width=s.style.height=(5+Math.random()*7)+'px';$('#pts').appendChild(s)}
