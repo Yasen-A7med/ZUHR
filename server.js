@@ -56,21 +56,27 @@ app.get('/', (req, res) => {
 
 app.post(['/api/preorders', '/preorders'], async (req, res) => {
 	const order = req.body;
-	const fields = ['name', 'phone', 'job', 'color', 'qty', 'at'];
+	const fields = ['name', 'phone', 'email', 'job', 'color', 'qty', 'at'];
 	if (!order || fields.some((f) => typeof order[f] !== 'string' || !order[f].trim())) {
 		return res.status(400).json({ error: 'Missing required order data' });
 	}
+
+	const displayJob = (order.job === 'Other' && order.jobOther) ? order.jobOther : order.job;
+	const payload = {
+		...order,
+		job: displayJob,
+	};
 
 	// حفظ في جوجل شيت لو متاح
 	if (sheets) {
 		try {
 			await sheets.spreadsheets.values.append({
 				spreadsheetId: sheetId,
-				range: 'A:F',
+				range: 'A:G',
 				valueInputOption: 'RAW',
 				insertDataOption: 'INSERT_ROWS',
 				requestBody: {
-					values: [[order.name, order.phone, order.job, order.color, order.qty, order.at]],
+					values: [[order.name, order.phone, order.email, displayJob, order.color, order.qty, order.at]],
 				},
 			});
 		} catch (err) {
@@ -81,7 +87,7 @@ app.post(['/api/preorders', '/preorders'], async (req, res) => {
 			await fetch(scriptUrl, {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(order),
+				body: JSON.stringify(payload),
 			});
 		} catch (err) {
 			console.error('Apps Script error:', err.message);
@@ -94,7 +100,7 @@ app.post(['/api/preorders', '/preorders'], async (req, res) => {
 			from: '"ZUHR System" <zuhr.startup@gmail.com>',
 			to: process.env.NOTIFY_EMAIL || 'zuhr.startup@gmail.com',
 			subject: `طلب حجز جديد: ${order.name}`,
-			text: `تم استلام طلب حجز جديد:\n\nالاسم: ${order.name}\nالموبايل: ${order.phone}\nالوظيفة: ${order.job}\nاللون: ${order.color}\nالكمية: ${order.qty}\nالتاريخ: ${order.at}`,
+			text: `تم استلام طلب حجز جديد:\n\nالاسم: ${order.name}\nالموبايل: ${order.phone}\nالبريد الإلكتروني: ${order.email}\nالوظيفة: ${displayJob}\nاللون: ${order.color}\nالكمية: ${order.qty}\nالتاريخ: ${order.at}`,
 		});
 	} catch (mailErr) {
 		console.error('Email notification error:', mailErr.message);
