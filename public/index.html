@@ -24,7 +24,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px #ffd86199}
 .btn.o{background:none;color:var(--navy);border:1.5px solid var(--navy);padding:7px 16px;font-size:13px}
 .btn.o:hover{background:var(--navy);color:#fff;box-shadow:none}
-.hero{padding:50px 0 20px;background:radial-gradient(520px 420px at 78% 40%,#27afa933,transparent),radial-gradient(300px 300px at 95% 90%,#ffd86155,transparent)}
+.hero{padding:50px 0 40px;background:radial-gradient(520px 360px at 78% 38%,#27afa933,transparent),radial-gradient(220px 220px at 92% 62%,#ffd86155,transparent)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center}
 @media(max-width:820px){.hero .wrap{grid-template-columns:1fr}}
 .pill{display:inline-block;background:var(--navy);color:var(--gold);border-radius:99px;padding:5px 16px;font-size:12px;letter-spacing:.08em;margin-bottom:18px}
@@ -32,7 +32,7 @@ h1{font-size:clamp(36px,6vw,62px);line-height:1.08;font-weight:800}
 h1 em{font-style:normal;color:var(--teal);background:linear-gradient(transparent 68%,var(--gold) 68%)}
 .sub{color:var(--teal);font-size:21px;margin:16px 0 8px;font-weight:700}
 .hero p.d{color:var(--mute);max-width:480px;margin-bottom:26px}
-.hero img{width:100%;max-height:600px;object-fit:contain;filter:drop-shadow(0 24px 30px #09193240);animation:fl 5s ease-in-out infinite}
+.hero img{width:100%;max-height:600px;object-fit:contain;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent);filter:drop-shadow(0 24px 30px #09193240);animation:fl 5s ease-in-out infinite}
 @keyframes fl{50%{transform:translateY(-10px)}}
 .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 section{padding:80px 0}
@@ -259,7 +259,7 @@ h2{font-size:24px}
 <div class="fv"><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div></div>
 <div class="ft"><div class="tx"><div class="num">04</div><h3 data-ar="نحيف وبيغطي مساحة واسعة">Slim, with wide coverage</h3><p data-ar="بيغطي مساحة كبيرة من أعلى الضهر والكتفين من غير ما تحس بيه.">Covers your upper back and shoulders without the bulk.</p></div>
 <div class="fv"><svg viewBox="0 0 360 220" style="height:218px;width:auto;max-width:100%" role="img" aria-label="Wide coverage across the upper back and shoulders, with a slim profile">
-<defs><marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#e0a800"/></marker></defs>
+<defs><linearGradient id="g4" x1="0" x2="1"><stop offset="0" stop-color="#091932" stop-opacity=".14"/><stop offset="1" stop-color="#091932" stop-opacity="0"/></linearGradient><marker id="ar4" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#e0a800"/></marker></defs>
 <path d="M44 208C44 122 66 90 110 86C154 90 176 122 176 208Z" fill="#09193212" stroke="#091932" stroke-opacity=".25" stroke-width="2"/>
 <circle cx="110" cy="40" r="20" fill="#09193218" stroke="#091932" stroke-opacity=".25" stroke-width="2"/>
 <rect x="102" y="58" width="16" height="30" rx="6" fill="#09193218"/>
@@ -268,7 +268,7 @@ h2{font-size:24px}
 <rect class="cov" x="97" y="116" width="26" height="30" rx="8" fill="#091932"/>
 <path d="M50 176V184M170 176V184M50 182H170" fill="none" stroke="#e0a800" stroke-width="3" stroke-linecap="round" marker-start="url(#ar4)" marker-end="url(#ar4)"/>
 <path d="M205 28V200" stroke="#09193222" stroke-width="2" stroke-dasharray="3 6"/>
-<path d="M290 30Q250 110 270 206L346 206L346 30Z" fill="#09193212"/>
+<path d="M290 30Q250 110 270 206L350 206L350 30Z" fill="url(#g4)"/>
 <path d="M290 30Q250 110 270 206" fill="none" stroke="#091932" stroke-opacity=".3" stroke-width="2"/>
 <path class="cov" d="M271.4 79.4Q263.6 109.4 263.4 140.7" fill="none" stroke="#27AFA9" stroke-width="7" stroke-linecap="round"/>
 <path d="M232 110H255" stroke="#e0a800" stroke-width="3" stroke-linecap="round" marker-end="url(#ar4)"/>
@@ -297,14 +297,14 @@ h2{font-size:24px}
 <h2 data-ar="جرّب الجهاز بنفسك">Try the device yourself</h2>
 <p class="lead" data-ar="حرّك الشريط وجرّب الاهتزاز والتسخين والتبريد وشوف الجهاز بيتصرف إزاي.">Drag the slider and try vibration, heat and cooling to see how ZUHR responds.</p>
 <div class="demo rv">
-<div><div class="stage" id="stg"><div class="halo"></div><div class="sr"><span></span><span></span><span></span></div><img id="dev" alt="ZUHR device"><div id="pts"></div></div>
+<div><div class="stage" id="stg"><div class="halo"></div><div class="sr"><span></span><span></span><span></span></div><img id="dev" alt="ZUHR device"><div id="pts"></div></div></div>
 <div>
 <div class="tabs" id="tabs"><button class="a" data-m="v" data-ar="تنبيه الوقفة">Posture alert</button><button data-m="h" data-ar="تسخين">Heat</button><button data-m="c" data-ar="تبريد">Cool</button></div>
 <div id="vp"><label><span data-ar="مدة الوقفة الغلط:">Time in poor posture:</span> <b id="sv">0</b>s</label><input type="range" id="sl" min="0" max="180" value="0"></div>
 <p id="mt"></p>
 <div class="sw" id="sw"><b class="a" data-c="#c9cdd2" style="background:#c9cdd2"></b><b data-c="#1c1f26" style="background:#1c1f26"></b><b data-c="#17275a" style="background:#17275a"></b><b data-c="#ffffff" style="background:#fff"></b><b data-c="#48b8cc" style="background:#48b8cc"></b></div>
 <p class="hint" data-ar="اختار اللون من الدواير اللي فوق">Pick a color from the circles above</p>
-</div></div></div></section>
+</div></div></section>
 
 <section id="compare" style="background:var(--soft)"><div class="wrap">
 <h2 data-ar="ZUHR مقابل البدائل">ZUHR vs the alternatives</h2>
@@ -337,7 +337,7 @@ h2{font-size:24px}
 <h2 data-ar="احجز نسختك">Reserve yours</h2>
 <p class="lead" data-ar="سجّل اهتمامك دلوقتي وثبّت سعر الحجز المبكر.">Register your interest now and lock the early-bird price.</p>
 <div class="order rv">
-<div class="price"><span class="tag" data-ar="سعر الحجز المبكر">EARLY-BIRD PRICE</span><b>2,749 <small style="font-size:18px">EGP</small></b><s>3,000 EGP</s></div>
+<div class="price"><span class="tag" data-ar="سعر الحجز المبكر">EARLY-BIRD PRICE</span><b>2,749 <small style="font-size:18px" data-ar="ج.م">EGP</small></b><s data-ar="3,000 ج.م">3,000 EGP</s></div>
 <div class="nopay"><span data-ar="مفيش دفع دلوقتي">No payment now</span></div>
 <form id="f" novalidate>
 <label data-ar="الاسم">Full name</label><input id="n" autocomplete="name">
@@ -345,6 +345,7 @@ h2{font-size:24px}
 <label data-ar="البريد الإلكتروني">Email</label><input id="em" type="email" inputmode="email" autocomplete="email" dir="ltr" placeholder="name@example.com">
 <label data-ar="المهنة">Profession</label>
 <select id="j"><option value="Dentist" data-ar="دكتور/ة أسنان">Dentist</option><option value="Programmer" data-ar="مبرمج/ة">Programmer</option><option value="Office worker" data-ar="موظف مكتبي">Office worker</option><option value="Other" data-ar="أخرى">Other</option></select>
+<div id="jw" style="display:none"><label data-ar="اكتب وظيفتك">Your job title</label><input id="jo" maxlength="60" autocomplete="organization-title" data-ph="e.g. Teacher|مثلًا: مدرّس"></div>
 <div class="two"><div><label data-ar="اللون المفضل">Preferred color</label><select id="c"><option value="Gray" data-ar="رمادي">Gray</option><option value="Black" data-ar="أسود">Black</option><option value="Navy" data-ar="كحلي">Navy</option><option value="White" data-ar="أبيض">White</option><option value="Teal" data-ar="تركواز">Teal</option></select></div>
 <div><label data-ar="الكمية">Quantity</label><select id="q"><option>1</option><option>2</option><option>3</option><option>4+</option></select></div></div>
 <div id="err"></div>
@@ -359,11 +360,11 @@ h2{font-size:24px}
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 let ar=false,m='v';
-const ER={bad:['Please enter your name, a valid mobile number and a valid email.','اكتب اسمك ورقم موبايل وإيميل صح من فضلك.'],fail:['Something went wrong while sending your reservation. Please try again in a moment.','حصلت مشكلة وإحنا بنبعت حجزك. جرّب تاني بعد شوية.']};
+const ER={bad:['Please enter your name, a valid mobile number and a valid email.','اكتب اسمك ورقم موبايل وإيميل صح من فضلك.'],job:['Please type your job title.','اكتب وظيفتك من فضلك.'],fail:['Something went wrong while sending your reservation. Please try again in a moment.','حصلت مشكلة وإحنا بنبعت حجزك. جرّب تاني بعد شوية.']};
 let errK='';function showErr(k){errK=k;$('#err').textContent=k?ER[k][+ar]:''}
 $$('[data-ar]').forEach(e=>e.dataset.en=e.innerHTML);
 function setLang(){document.documentElement.dir=ar?'rtl':'ltr';document.documentElement.lang=ar?'ar':'en';
-$$('[data-ar]').forEach(e=>e.innerHTML=ar?e.dataset.ar:e.dataset.en);$('#lang').textContent=ar?'English':'العربية';document.title=ar?'زُهر | كل تنبيه بيصحّي ضهرك':'ZUHR | Every Alert Wakes Up Your Back';showErr(errK);mode()}
+$$('[data-ar]').forEach(e=>e.innerHTML=ar?e.dataset.ar:e.dataset.en);$('#lang').textContent=ar?'English':'العربية';document.title=ar?'زُهر | كل تنبيه بيصحّي ضهرك':'ZUHR | Every Alert Wakes Up Your Back';showErr(errK);$$('[data-ph]').forEach(e=>e.placeholder=e.dataset.ph.split('|')[+ar]);mode()}
 const ANC='.ft,.demo,.tw,.cg,.order,h2,header,footer';
 function anchor(){const e=document.elementFromPoint(innerWidth/2,110),a=e&&e.closest(ANC);return a?[a,a.getBoundingClientRect().top]:null}
 function switchLang(){const a=anchor();
@@ -380,6 +381,7 @@ const TX={v:[['No alert yet. A short slouch is fine.','مفيش تنبيه لس�
 let tier=0;
 function mode(){let t;if(m==='v'){const v=+$('#sl').value;$('#sv').textContent=v;tier=v<30?0:v<120?1:2;t=TX.v[tier]}else{tier=0;t=TX[m]}$('#mt').textContent=ar?t[1]:t[0];$('#stg').className='stage '+(m==='v'?(tier?'v'+tier:''):m)}
 $('#sl').oninput=mode;
+$('#j').onchange=()=>{$('#jw').style.display=$('#j').value==='Other'?'block':'none'};
 $$('#tabs button').forEach(b=>b.onclick=()=>{$$('#tabs button').forEach(k=>k.classList.remove('a'));b.classList.add('a');m=b.dataset.m;$('#vp').style.display=m==='v'?'block':'none';mode()});
 const th=$$('#th img'),dev=$('#dev');dev.src=th[0].src;
 for(let i=0;i<22;i++){const s=document.createElement('span');s.className='p';s.style.left=(5+Math.random()*90)+'%';s.style.animationDelay=(Math.random()*3)+'s';s.style.width=s.style.height=(5+Math.random()*7)+'px';$('#pts').appendChild(s)}
@@ -392,8 +394,9 @@ $('#f').onsubmit=async e=>{e.preventDefault();
 const n=$('#n').value.trim(),cc=$('#cc').value;let d=$('#p').value.replace(/\D/g,'').replace(/^0+/,'');if(cc==='+20'&&d.startsWith('20')&&d.length===12)d=d.slice(2);const ok=cc==='+20'?/^1[0125]\d{8}$/.test(d):(d.length>=6&&d.length<=12),p=cc+d;
 const em=$('#em').value.trim(),emOk=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em);
 if(n.length<2||!ok||!emOk){showErr('bad');return}
+const jo=$('#jo').value.trim(),other=$('#j').value==='Other';if(other&&jo.length<2){showErr('job');return}
 showErr('');
-const r={name:n,phone:p,email:em,job:$('#j').value,color:$('#c').value,qty:$('#q').value,at:new Date().toISOString()};
+const r={name:n,phone:p,email:em,job:$('#j').value,jobOther:other?jo:'',color:$('#c').value,qty:$('#q').value,at:new Date().toISOString()};
 const button=$('#go');button.disabled=true;
 try{
 const response=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(r)});
